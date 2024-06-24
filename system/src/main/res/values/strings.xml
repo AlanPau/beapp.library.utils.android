@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">System</string>
+    <string name="share_app_with">Partager l’application avec…</string>
+    <string name="share_app_message" />
+    <string name="copied_text">Texte copié</string>
+    <plurals name="date_format_min">
+        <item quantity="one">1 minute</item>
+        <item quantity="other">%d minutes</item>
+        <item quantity="many">%d minutes</item>
+    </plurals>
+    <plurals name="date_format_hour">
+        <item quantity="one">1 heure</item>
+        <item quantity="other">%d heures</item>
+        <item quantity="many">%d heures</item>
+    </plurals>
+    <string name="yesterday">Hier</string>
+    <string name="date_format_now">À l\'instant</string>
+    <string name="date_format_ago">Il y a %s</string>
+
+</resources>
