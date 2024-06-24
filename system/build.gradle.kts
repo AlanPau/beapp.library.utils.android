@@ -1,6 +1,7 @@
 plugins {
 	id("com.android.library")
 	alias(libs.plugins.jetbrainsKotlinAndroid)
+	alias(libs.plugins.kover)
 }
 
 android {
@@ -26,6 +27,18 @@ android {
 	}
 	kotlinOptions {
 		jvmTarget = "1.8"
+	}
+}
+
+koverReport {
+	defaults {
+		// adds the contents of the reports of `release` Android build variant to default reports
+		mergeWith("release")
+	}
+	filters {
+		excludes {
+
+		}
 	}
 }
 
