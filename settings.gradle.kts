@@ -1,5 +1,3 @@
-import java.net.URI
-
 pluginManagement {
 	repositories {
 		google {
@@ -27,5 +25,6 @@ include(":app")
 include(":androidXMLView")
 include(":compose")
 include(":kotlin")
+include(":lifecycle")
 include(":system")
 include(":bom")
