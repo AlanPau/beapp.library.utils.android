@@ -1,47 +1,56 @@
 plugins {
-	id("io.github.gradlebom.generator-plugin").version("1.0.0.Final")
-	id("signing")
+	id("java-platform")
+	id ("maven-publish")
 }
 
-group = "beapp.utils.bom"
-version = "1.0.0"
+group = "fr.beapp.utils"
+version = "0.0.2"
 
-publishing {
-	publications {
-		create<MavenPublication>("Bom") {
-			artifactId = "utils-bom"
+javaPlatform {
+	allowDependencies()
+}
 
-			pom {
-				name.set("Beapp Utils BoM")
-				description.set("Bill of Materials (BoM) for Beapp Utils libraries")
-				// TODO url.set("")
-
-				licenses {
-					license {
-						name.set("The Apache License, Version 2.0")
-						url.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
-					}
-				}
-
-				issueManagement {
-					system.set("Issues")
-					// TODO url.set("")
-				}
-
-				scm {
-					/*connection.set("")
-					developerConnection.set("")
-					url.set("")*/ // TODO if needed
-				}
-			}
-		}
+dependencies {
+	constraints {
+		api(project(":androidXMLView"))
+		api(project(":compose"))
+		api(project(":kotlin"))
+		api(project(":lifecycle"))
+		api(project(":system"))
 	}
 }
 
-signing {
-	if (project.hasProperty("signing.gnupg.keyName")) {
-		println("Signing lib...")
-		useGpgCmd()
-		sign(publishing.publications)
+publishing {
+	publications {
+		create<MavenPublication>("bom") {
+			from(components["javaPlatform"])
+
+			pom {
+				name.set(project.name)
+				description.set(project.provider(project::getDescription))
+				url.set("${rootProject.projectDir}/repo") // TODO
+				licenses {
+					license {
+						name.set("Apache License Version 2.0")
+						url.set("https://www.apache.org/licenses/LICENSE-2.0")
+					}
+				}
+			}
+			repositories {
+				// Define your repository here
+				// For local repository:
+				maven {
+					url = uri("${rootProject.projectDir}/repo")
+				}
+				// For remote repository:
+				// maven {
+				//     url = "http://my.repository.url"
+				//     credentials {
+				//         username = 'user'
+				//         password = 'password'
+				//     }
+				// }
+			}
+		}
 	}
 }

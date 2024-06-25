@@ -5,15 +5,13 @@ plugins {
 }
 
 android {
-	namespace = "beapp.utils.kotlin"
+	namespace = "fr.beapp.utils.kotlin"
 	compileSdk = 34
+	version = "1.0.0"
 
 	defaultConfig {
-		applicationId = "beapp.utils.kotlin"
 		minSdk = 24
 		targetSdk = 34
-		versionCode = 1
-		versionName = "1.0"
 
 		testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 	}

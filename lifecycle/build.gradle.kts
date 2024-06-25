@@ -4,15 +4,13 @@ plugins {
 }
 
 android {
-	namespace = "beapp.utils.lifecycle"
+	namespace = "fr.beapp.utils.lifecycle"
 	compileSdk = 34
+	version = "1.0.0"
 
 	defaultConfig {
-		applicationId = "beapp.utils.lifecycle"
 		minSdk = 24
 		targetSdk = 34
-		versionCode = 1
-		versionName = "1.0"
 
 		testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 	}

@@ -1,12 +1,12 @@
 plugins {
-	id("com.android.library")
-	alias(libs.plugins.jetbrainsKotlinAndroid)
-	alias(libs.plugins.kover)
+	id("java-platform")
+	id ("maven-publish")
 }
 
 android {
-	namespace = "beapp.utils.system"
+	namespace = "fr.beapp.utils.system"
 	compileSdk = 34
+	version = "1.0.0"
 
 	defaultConfig {
 		minSdk = 24
