@@ -21,7 +21,6 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "fr.beapp.utils"
-include(":app")
 include(":androidXMLView")
 include(":compose")
 include(":kotlin")
