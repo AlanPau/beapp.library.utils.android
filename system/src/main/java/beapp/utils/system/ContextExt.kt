@@ -1,6 +1,7 @@
 package beapp.utils.system
 
 import android.accessibilityservice.AccessibilityServiceInfo
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.ActivityManager
 import android.app.UiModeManager
@@ -8,7 +9,6 @@ import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.content.res.Configuration
 import android.net.Uri
 import android.os.VibrationEffect
 import android.os.Vibrator
@@ -18,6 +18,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.getSystemService
 import fr.beapp.logger.BuildConfig
 import fr.beapp.logger.Logger
+import fr.beapp.utils.system.R
 
 /**
  * Launch intent
@@ -175,6 +176,7 @@ fun Context.shareApp() {
  * Vibrate
  *
  */
+@SuppressLint("MissingPermission")
 fun Context.vibrate() {
 	ContextCompat.getSystemService(this, Vibrator::class.java)?.let {
 		if (isSdk26OrAbove()) {

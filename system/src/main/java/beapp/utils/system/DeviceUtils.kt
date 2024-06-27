@@ -4,6 +4,7 @@ import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
 import android.widget.Toast
+import fr.beapp.utils.system.R
 
 /**
  * Copy to clipboard and show copied text in toast

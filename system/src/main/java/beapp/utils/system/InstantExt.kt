@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.annotation.StringRes
+import fr.beapp.utils.system.R
 import java.time.Duration
 import java.time.Instant
 import java.time.LocalDate

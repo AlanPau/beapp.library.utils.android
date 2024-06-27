@@ -1,12 +1,16 @@
 plugins {
-	alias(libs.plugins.androidApplication)
-	alias(libs.plugins.jetbrainsKotlinAndroid)
+	id("com.android.library")
+	kotlin("android")
+	id("maven-publish")
 }
 
+group = "fr.beapp.utils"
+version = "1.0.0"
+
 android {
-	namespace = "fr.beapp.utils.compose"
+	namespace = "${project.group}.${project.name}"
 	compileSdk = 34
-	version = "1.0.0"
+	version = project.version.toString()
 
 	defaultConfig {
 		minSdk = 24
@@ -47,4 +51,23 @@ dependencies {
 	testImplementation(libs.junit)
 	androidTestImplementation(libs.androidx.junit)
 	androidTestImplementation(libs.androidx.espresso.core)
+}
+
+afterEvaluate {
+	publishing {
+		publications {
+			create<MavenPublication>(project.name) {
+				from(components["release"])
+				groupId = project.group.toString()
+				artifactId = project.name
+				version = project.version.toString()
+				repositories {
+					maven {
+						url = uri("${rootProject.projectDir}/repo")
+					}
+				}
+			}
+		}
+
+	}
 }

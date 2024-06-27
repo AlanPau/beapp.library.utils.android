@@ -7,6 +7,7 @@ import android.graphics.drawable.Drawable
 import androidx.annotation.DimenRes
 import androidx.annotation.DrawableRes
 import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
+import fr.beapp.utils.system.R
 
 /**
  * Is tablet

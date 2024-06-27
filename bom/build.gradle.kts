@@ -1,6 +1,6 @@
 plugins {
+	id("maven-publish")
 	id("java-platform")
-	id ("maven-publish")
 }
 
 group = "fr.beapp.utils"
@@ -24,20 +24,10 @@ publishing {
 	publications {
 		create<MavenPublication>("bom") {
 			from(components["javaPlatform"])
-
-			pom {
-				name.set(project.name)
-				description.set(project.provider(project::getDescription))
-				url.set("${rootProject.projectDir}/repo") // TODO
-				licenses {
-					license {
-						name.set("Apache License Version 2.0")
-						url.set("https://www.apache.org/licenses/LICENSE-2.0")
-					}
-				}
-			}
+			groupId = project.group.toString()
+			artifactId = "bom"
+			version = project.version.toString()
 			repositories {
-				// Define your repository here
 				// For local repository:
 				maven {
 					url = uri("${rootProject.projectDir}/repo")
