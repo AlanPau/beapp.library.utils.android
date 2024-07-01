@@ -2,6 +2,7 @@ plugins {
 	id("com.android.library")
 	kotlin("android")
 	id("maven-publish")
+	id("org.jetbrains.kotlinx.kover") version "0.7.5"
 }
 
 group = "fr.beapp.utils"
@@ -47,6 +48,7 @@ dependencies {
 	testImplementation(libs.junit)
 	androidTestImplementation(libs.androidx.junit)
 	androidTestImplementation(libs.androidx.espresso.core)
+	kover(project(":system"))
 }
 afterEvaluate {
 	publishing {
@@ -64,5 +66,12 @@ afterEvaluate {
 			}
 		}
 
+	}
+}
+
+koverReport {
+	defaults {
+		// adds the contents of the reports of `release` Android build variant to default reports
+		mergeWith("release")
 	}
 }

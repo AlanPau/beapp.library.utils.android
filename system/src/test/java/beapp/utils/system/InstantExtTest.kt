@@ -1,10 +1,9 @@
 package beapp.utils.system
 
-import android.content.Context
-import androidx.test.core.app.ApplicationProvider
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import java.time.Instant
+
 class InstantExtTest {
 
 	//private val context = ApplicationProvider.getApplicationContext<Context>()
@@ -13,7 +12,7 @@ class InstantExtTest {
 	fun `test instant is today`() {
 		// Given
 		val today = Instant.now()
-		val yesterday = Instant.now().minusMillis(36000000)
+		val yesterday = Instant.now().minusMillis( 115741000)
 		// When
 		val isToday = today.isToday()
 		val isYesterday = yesterday.isToday()
