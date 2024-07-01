@@ -1,8 +1,8 @@
 plugins {
-	id("com.android.library")
 	kotlin("android")
+	id("com.android.library")
 	id("maven-publish")
-	id("org.jetbrains.kotlinx.kover") version "0.7.5"
+	alias(libs.plugins.kover)
 }
 
 group = "fr.beapp.utils"
@@ -69,9 +69,14 @@ afterEvaluate {
 	}
 }
 
-koverReport {
-	defaults {
-		// adds the contents of the reports of `release` Android build variant to default reports
-		mergeWith("release")
+kover {
+	currentProject {
+		createVariant("custom") {
+			addWithDependencies("release")
+		}
+	}
+	reports {
+		variant("custom") {
+		}
 	}
 }

@@ -1,6 +1,6 @@
 plugins {
-	id("com.android.library")
 	kotlin("android")
+	id("com.android.library")
 	id("maven-publish")
 	alias(libs.plugins.kover)
 }
@@ -35,13 +35,14 @@ android {
 	}
 }
 
-koverReport {
-	defaults {
-		// adds the contents of the reports of `release` Android build variant to default reports
-		mergeWith("release")
+kover {
+	currentProject {
+		createVariant("custom") {
+			addWithDependencies("release")
+		}
 	}
-	filters {
-		excludes {
+	reports {
+		variant("custom") {
 
 		}
 	}
@@ -77,9 +78,14 @@ afterEvaluate {
 	}
 }
 
-koverReport {
-	defaults {
-		// adds the contents of the reports of `release` Android build variant to default reports
-		mergeWith("release")
+kover {
+	currentProject {
+		createVariant("custom") {
+			addWithDependencies("release")
+		}
+	}
+	reports {
+		variant("custom") {
+		}
 	}
 }

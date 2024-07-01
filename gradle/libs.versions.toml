@@ -1,48 +1,37 @@
 [versions]
-activityCompose = "1.9.0"
 agp = "8.3.2"
 appcompat = "1.7.0"
 coil = "2.5.0"
 coilSvg = "2.2.2"
-composeBom = "2024.06.00"
-composeLifecycleRuntime = "2.7.0"
+coreKtx = "1.13.1"
+coreKtxVersion = "1.6.1"
+composeLifecycleRuntime = "2.8.2"
+espressoCore = "3.5.1"
+junit = "4.13.2"
+junitKtx = "1.1.5"
+junitVersion = "1.1.5"
 kotlin = "1.9.21"
 kotlinCompiler = "1.5.6"
-coreKtx = "1.13.1"
-junit = "4.13.2"
-junitVersion = "1.1.5"
-espressoCore = "3.5.1"
 kotlinxDatetime = "0.6.0"
-kover = "0.7.5"
-lifecycleRuntimeKtx = "2.8.2"
+kover = "0.8.1"
 logger = "1.8"
 material = "1.12.0"
 material3WindowSizeClass = "1.2.1"
 mockk = "1.13.11"
 picasso = "2.71828"
 picassoTransformations = "2.4.0"
-utils = "1.0.0"
-coreKtxVersion = "1.5.0"
-junitKtx = "1.1.5"
+sonarqube = "5.0.0.4638"
 
 [libraries]
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-junit-ktx = { group = "androidx.test.ext", name = "junit-ktx", version.ref = "junitKtx" }
 coil = { module = "io.coil-kt:coil", version.ref = "coil" }
 coil-svg = { module = "io.coil-kt:coil-svg", version.ref = "coilSvg" }
+core-ktx = { group = "androidx.test", name = "core-ktx", version.ref = "coreKtxVersion" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
-androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
-androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
-androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
-androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
-androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
-androidx-ui = { group = "androidx.compose.ui", name = "ui" }
-androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
-androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
-androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
-androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
-androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
-androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
-androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinxDatetime" }
 lifecycleRuntime = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "composeLifecycleRuntime" }
 logger = { module = "fr.beapp.logger:logger", version.ref = "logger" }
@@ -50,15 +39,11 @@ material = { group = "com.google.android.material", name = "material", version.r
 mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 picasso = { module = "com.squareup.picasso:picasso", version.ref = "picasso" }
 picasso-transformations = { module = "jp.wasabeef:picasso-transformations", version.ref = "picassoTransformations" }
-utils-bom = { group = "beapp.utils.bom", name = "utils-bom", version.ref = "utils" }
-utils-kotlin = { group = "beapp.utils.kotlin", name = "kotlin"}
-utils-system= { group = "beapp.utils.system", name = "system"}
 material3WindowSizeClass = { group = "androidx.compose.material3", name = "material3-window-size-class", version.ref = "material3WindowSizeClass" }
-core-ktx = { group = "androidx.test", name = "core-ktx", version.ref = "coreKtxVersion" }
-androidx-junit-ktx = { group = "androidx.test.ext", name = "junit-ktx", version.ref = "junitKtx" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kover = { id = "org.jetbrains.kotlinx.kover", version.ref = "kover" }
+sonarqube = { id = "org.sonarqube", version.ref = "sonarqube" }
 
